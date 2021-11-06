@@ -1,5 +1,3 @@
-import { NumberFormatStyle } from "@angular/common";
-
 export class Tarefa {
     id: number;
     titulo: string;
@@ -8,7 +6,8 @@ export class Tarefa {
     percentual: number;
     dataConclusao: Date;
 
-    constructor(titulo: string, prioridade: number, dataCriacao: Date, percentual: number, dataConclusao: Date) {
+    constructor(id: number, titulo: string, prioridade: number, dataCriacao: Date, percentual: number, dataConclusao: Date) {
+        this.id = id;
         this.titulo = titulo;
         this.prioridade = prioridade;
         this.dataCriacao = dataCriacao;

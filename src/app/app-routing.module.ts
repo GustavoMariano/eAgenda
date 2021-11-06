@@ -4,6 +4,8 @@ import { FuncionarioCriarComponent } from './funcionario/criar/funcionario-criar
 import { FuncionarioListarComponent } from './funcionario/listar/funcionario-listar.component';
 import { FuncionarioEditarComponent } from './funcionario/editar/funcionario-editar.component';
 import { tarefaCriarComponent } from './tarefa/criar/tarefa-criar.component';
+import { TarefaListarComponent } from './tarefa/listar/tarefa-listar.component';
+import { TarefaEditarComponent } from './tarefa/editar/tarefa-editar.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full'},
@@ -11,7 +13,9 @@ const routes: Routes = [
   { path: 'funcionario/listar', component: FuncionarioListarComponent },
   { path: 'funcionario/editar/:id', component: FuncionarioEditarComponent },
 
-  { path: 'tarefa/criar', component: tarefaCriarComponent }
+  { path: 'tarefa/criar', component: tarefaCriarComponent },
+  { path: 'tarefa/listar', component: TarefaListarComponent },
+  { path: 'tarefa/editar/:id', component: TarefaEditarComponent }
 ];
 
 @NgModule({

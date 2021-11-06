@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'eAgenda';
   funcionarioSelecionado: number = 1;
+  tarefaSelecionada: number = 1;
 }
