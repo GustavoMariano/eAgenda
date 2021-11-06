@@ -1,0 +1,38 @@
+<h1>{{titulo}}</h1>
+<hr>
+
+<form [formGroup]="cadastroForm" (ngSubmit)="adicionarTarefa()">
+    <label for="titulo">Titulo</label>
+    <div>
+        <input id="titulo" type="text" placeholder="Titulo" formControlName="titulo"> 
+    </div>
+
+    <label for="prioridade">Prioridade</label>
+    <div>
+        <select id="prioridade" formControlName="prioridade">
+            <option value="0">Baixa</option>
+            <option value="1">Normal</option>
+            <option value="2">Alta</option>
+        </select>
+    </div>
+
+    <label for="dataCriacao">Nome</label>
+    <div>
+        <input id="dataCriacao" type="date" placeholder="Data Criacao" formControlName="dataCriacao"> 
+    </div>
+
+    <label for="percentual">Nome</label>
+    <div>
+        <input id="percentual" type="number" placeholder="Percentual" formControlName="percentual"> 
+    </div>
+
+    <label for="dataConclusao">Nome</label>
+    <div>
+        <input id="dataConclusao" type="date" placeholder="Data Conclusao" formControlName="dataConclusao"> 
+    </div>
+    
+    <br>
+    <div>
+        <button id="registrar" type="submit">registrar</button>
+    </div>
+</form>

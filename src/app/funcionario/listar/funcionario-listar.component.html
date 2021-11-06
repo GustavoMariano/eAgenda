@@ -1,0 +1,23 @@
+<h1>{{titulo}}</h1>
+<br>
+<br>
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">CPF</th>
+            <th scope="col">Data de Admissao</th>
+            <th scope="col">Cargo</th>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let funcionario of listaFuncionarios">
+            <td>{{funcionario.nome}}</td>
+            <td>{{funcionario.cpf}}</td>
+            <td>{{funcionario.dataAdmissao.toLocaleDateString()}}</td>
+            <td>{{converterCargo(funcionario.cargo)}}</td>
+        </tr>
+    </tbody>
+
+</table>
