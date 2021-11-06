@@ -7,13 +7,18 @@ import { AppComponent } from './app.component';
 import { FuncionarioCriarComponent } from './funcionario/criar/funcionario-criar.component';
 import { tarefaCriarComponent } from './tarefa/criar/tarefa-criar.component';
 import { FuncionarioListarComponent } from './funcionario/listar/funcionario-listar.component';
+import { TarefaListarComponent } from './tarefa/listar/tarefa-listar.component';
+import { FuncionarioEditarComponent } from './funcionario/editar/funcionario-editar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FuncionarioCriarComponent,
     tarefaCriarComponent,
-    FuncionarioListarComponent
+    FuncionarioListarComponent,
+    TarefaListarComponent,
+    FuncionarioEditarComponent,
+    
   ],
   imports: [
     BrowserModule,

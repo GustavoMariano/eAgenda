@@ -1,7 +1,7 @@
 <h1>{{titulo}}</h1>
 <hr>
 
-<form [formGroup]="cadastroForm" (ngSubmit)="adicionarFuncionario()">
+<form [formGroup]="cadastroForm" (ngSubmit)="editarFuncionario()">
     <label for="nome">Nome</label>
     <div>
         <input id="nome" type="text" placeholder="Nome" formControlName="nome"> 
@@ -24,6 +24,6 @@
     </div>
     <br>
     <div>
-        <button id="registrar" type="submit">Registrar</button>
+        <button id="registrar" type="submit">Editar</button>
     </div>
 </form>
