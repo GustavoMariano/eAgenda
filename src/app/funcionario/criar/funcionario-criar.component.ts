@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, FormsModule } from '@angular/forms';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { cargoType } from 'src/app/shared/enums/cargoEnum';
+import { IFuncionarioService } from 'src/app/shared/interfaces/IFuncionarioService';
+import { Funcionario } from 'src/app/shared/model/Funcionario';
 
 @Component({
   selector: 'app-funcionario-criar',
@@ -7,12 +10,19 @@ import { FormControl, FormGroup, FormsModule } from '@angular/forms';
 })
 
 export class FuncionarioCriarComponent implements OnInit {
-  titulo: string = 'Cadastro de Funcionário';
+  titulo: string = "Cadastrar Funcionário";
   cadastroForm: FormGroup;
+  funcionario: Funcionario;
 
-  constructor() { }
+  tipos = cargoType;
+  cargos: any[]
+
+  constructor(@Inject('IFuncionarioServiceToken') private servico: IFuncionarioService) { }
 
   ngOnInit(): void {
+
+    this.cargos = Object.keys(this.tipos).filter(t => !isNaN(Number(t)));
+
     this.cadastroForm = new FormGroup({
       nome: new FormControl(''),
       cpf: new FormControl(''),
@@ -22,7 +32,11 @@ export class FuncionarioCriarComponent implements OnInit {
   }
 
   adicionarFuncionario() {
-    console.log(this.cadastroForm.value);
+
+    this.funcionario = Object.assign({}, this.funcionario, this.cadastroForm.value);
+    this.servico.adicionarFuncionario(this.funcionario)
+
+    this.cadastroForm.reset();
   }
 
 }
