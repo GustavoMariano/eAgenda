@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { ITarefaService } from './shared/interfaces/ITarefaService';
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,23 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'eAgenda';
-  funcionarioSelecionado: number = 1;
-  tarefaSelecionada: number = 1;
+  registroSelecionado: number;
+
+  /**
+   *
+   
+  constructor(private servicoModal: NgbModal, @Inject('ITarefaServiceToken') private servico: ITarefaService) {
+
+  }
+
+
+  abrirConfirmacao(modal: any){
+    this.servicoModal.open(modal).result.then((resultado) =>{
+      if(resultado == 'Excluir'){
+        this.servico.excluirTarefa(this.registroSelecionado)
+      }
+    });
+    
+  }
+  */
 }

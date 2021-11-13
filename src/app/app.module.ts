@@ -10,6 +10,9 @@ import { FuncionarioListarComponent } from './funcionario/listar/funcionario-lis
 import { TarefaListarComponent } from './tarefa/listar/tarefa-listar.component';
 import { FuncionarioEditarComponent } from './funcionario/editar/funcionario-editar.component';
 import { TarefaEditarComponent } from './tarefa/editar/tarefa-editar.component';
+import { LocalStorageFuncionarioService } from './funcionario/services/local-storage-funcionario.service';
+import { LocalStorageTarefaService } from './tarefa/services/local-storage-tarefa.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,11 @@ import { TarefaEditarComponent } from './tarefa/editar/tarefa-editar.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [{provide: 'IFuncionarioServiceToken', useClass: LocalStorageFuncionarioService}, 
+  {provide: 'ITarefaServiceToken', useClass: LocalStorageTarefaService}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -5,6 +5,7 @@
 <table>
     <thead>
         <tr>
+            <th scope="col">Id</th>
             <th scope="col">Titulo</th>
             <th scope="col">Prioridade</th>
             <th scope="col">Data de Criação</th>
@@ -14,11 +15,12 @@
 
     <tbody>
         <tr *ngFor="let tarefa of listaTarefas">
+            <td>{{tarefa.id}}</td>
             <td>{{tarefa.titulo}}</td>
             <td>{{converterPrioridade(tarefa.prioridade)}}</td>
-            <td>{{tarefa.dataCriacao.toLocaleDateString()}}</td>
+            <td>{{formatarData(tarefa.dataCriacao)}}</td>
             <td>{{tarefa.percentual}}</td>
-            <td>{{tarefa.dataConclusao.toLocaleDateString()}}</td>
+            <td>{{formatarData(tarefa.dataConclusao)}}</td>
         </tr>
     </tbody>
 
