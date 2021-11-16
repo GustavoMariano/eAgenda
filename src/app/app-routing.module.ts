@@ -12,7 +12,6 @@ const routes: Routes = [
   { path: 'funcionario/criar', component: FuncionarioCriarComponent },
   { path: 'funcionario/listar', component: FuncionarioListarComponent },
   { path: 'funcionario/editar/:id', component: FuncionarioEditarComponent },
-
   { path: 'tarefa/criar', component: tarefaCriarComponent },
   { path: 'tarefa/listar', component: TarefaListarComponent },
   { path: 'tarefa/editar/:id', component: TarefaEditarComponent }
