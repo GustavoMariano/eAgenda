@@ -11,14 +11,16 @@ import { TarefaListViewModel } from 'src/app/shared/viewModels/Tarefa/TarefaList
 export class TarefaListarComponent implements OnInit {
 
   titulo: string = "Lista Funcionários";
+
   listaTarefas: TarefaListViewModel[] = [];
+
   constructor(@Inject('ITarefaServiceToken') private servico: IHttpTarefaService) { }
 
   ngOnInit(): void {
-    this.obterTarefas();
+    this.carregarTarefas();
   }
 
-  obterTarefas() {
+  carregarTarefas() {
 
     this.servico.obterTarefas()
       .subscribe((tarefas: TarefaListViewModel[]) => {
@@ -37,6 +39,9 @@ export class TarefaListarComponent implements OnInit {
   }
 
   formatarData(data: Date): string {
+    if (data.toString() == '')
+      return '';
+      
     return new Date(data).toLocaleDateString();
   }
 }
