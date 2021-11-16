@@ -1,13 +1,33 @@
 <div class="container main-container">
-    <h1>{{titulo}}</h1> 
+    <h1>{{titulo}}</h1>
     <hr>
 
     <form [formGroup]="cadastroForm" (ngSubmit)="editarTarefa()">
-        <label class="control-label" for="titulo">Titulo</label>
-        <div>
-            <input class="form-control" id="titulo" type="text" placeholder="Titulo" formControlName="titulo"> 
-        </div>
 
+        <label class="control-label" for="titulo">Título</label>
+        <div>
+            <input class="form-control" id="titulo" type="text" placeholder="Título (requerido)"
+                formControlName="titulo" />
+        </div>
+        <br>
+        <label class="control-label" for="percentual">Percentual</label>
+        <div>
+            <input class="form-control" id="percentual" type="text" placeholder="Percentual (requerido)"
+                formControlName="percentual" />
+        </div>
+        <br>
+        <label class="control-label" for="dataCriacao">Data Criação</label>
+        <div>
+            <input class="form-control" id="dataCriacao" type="date" placeholder="Data Criação (requerido)"
+                formControlName="dataCriacao" readonly />
+        </div>
+        <br>
+        <label class="control-label" for="dataConclusao">Data Conclusão</label>
+        <div>
+            <input class="form-control" id="dataConclusao" type="date" placeholder="Data Conclusão (requerido)"
+                formControlName="dataConclusao" readonly />
+        </div>
+        <br>
         <label class="control-label" for="prioridade">Prioridade</label>
         <div>
             <select class="form-select" id="prioridade" formControlName="prioridade">
@@ -16,25 +36,10 @@
                 </option>
             </select>
         </div>
-
-        <label class="control-label" for="dataCriacao">Nome</label>
-        <div>
-            <input class="form-control" id="dataCriacao" type="date" placeholder="Data Criacao" formControlName="dataCriacao" readonly /> 
-        </div>
-
-        <label class="control-label" for="percentual">Nome</label>
-        <div>
-            <input class="form-control" id="percentual" type="number" placeholder="Percentual" formControlName="percentual"> 
-        </div>
-
-        <label class="control-label" for="dataConclusao">Nome</label>
-        <div>
-            <input class="form-control" id="dataConclusao" type="date" placeholder="Data Conclusao" formControlName="dataConclusao" readonly /> 
-        </div>
-        
         <br>
         <div>
-            <button id="registrar" type="submit">registrar</button>
+            <button class="btn btn-success" id="registrar" type="submit">Registrar</button>
+            <button class="btn btn-danger" id="cancelar" type="button" (click)="cancelar()">Cancelar</button>
         </div>
     </form>
 </div>

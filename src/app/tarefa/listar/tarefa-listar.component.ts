@@ -10,11 +10,11 @@ import { TarefaListViewModel } from 'src/app/shared/viewModels/Tarefa/TarefaList
 
 export class TarefaListarComponent implements OnInit {
 
-  titulo: string = "Lista Funcionários";
+  titulo: string = "Lista de Tarefas";
 
   listaTarefas: TarefaListViewModel[] = [];
 
-  constructor(@Inject('ITarefaServiceToken') private servico: IHttpTarefaService) { }
+  constructor(@Inject('IHttpTarefaServiceToken') private servico: IHttpTarefaService) { }
 
   ngOnInit(): void {
     this.carregarTarefas();

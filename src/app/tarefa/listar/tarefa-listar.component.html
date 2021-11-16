@@ -19,7 +19,7 @@
             <tr *ngFor="let tarefa of listaTarefas">
                 <td>{{tarefa.id}}</td>
                 <td>{{tarefa.titulo}}</td>
-                <td>{{converterPrioridade(tarefa.prioridade)}}</td>
+                <td>{{tarefa.prioridade}}</td>
                 <td>{{formatarData(tarefa.dataCriacao)}}</td>
                 <td>{{tarefa.percentual}}</td>
                 <td>{{formatarData(tarefa.dataConclusao)}}</td>
